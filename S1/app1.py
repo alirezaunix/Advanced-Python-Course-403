@@ -4,6 +4,8 @@ def f1(x,y):
 def f2(a,b):
     print("I am in f2 Function")
 
+def f3():
+    pass
 
 if __name__=="__main__":
     print("First Line")
