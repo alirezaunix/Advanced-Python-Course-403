@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>257</width>
-    <height>229</height>
+    <width>297</width>
+    <height>260</height>
    </rect>
   </property>
   <property name="sizePolicy">
@@ -81,6 +81,28 @@
         </widget>
        </item>
        <item>
+        <widget class="QFrame" name="frame_5">
+         <property name="frameShape">
+          <enum>QFrame::NoFrame</enum>
+         </property>
+         <property name="frameShadow">
+          <enum>QFrame::Raised</enum>
+         </property>
+         <layout class="QHBoxLayout" name="horizontalLayout_4">
+          <item>
+           <widget class="QLabel" name="label_3">
+            <property name="text">
+             <string>age           </string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QLineEdit" name="in_3"/>
+          </item>
+         </layout>
+        </widget>
+       </item>
+       <item>
         <widget class="QFrame" name="frame">
          <property name="frameShape">
           <enum>QFrame::NoFrame</enum>
@@ -116,7 +138,7 @@
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>257</width>
+     <width>297</width>
      <height>21</height>
     </rect>
    </property>
