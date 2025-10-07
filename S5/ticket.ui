@@ -397,29 +397,22 @@
      <x>0</x>
      <y>0</y>
      <width>486</width>
-     <height>30</height>
+     <height>21</height>
     </rect>
    </property>
   </widget>
   <widget class="QStatusBar" name="statusbar"/>
  </widget>
+ <tabstops>
+  <tabstop>in_movie</tabstop>
+  <tabstop>btn_clear</tabstop>
+  <tabstop>spin_ticket</tabstop>
+  <tabstop>combo_time</tabstop>
+  <tabstop>btn_print</tabstop>
+  <tabstop>btn_exit</tabstop>
+  <tabstop>in_fname</tabstop>
+  <tabstop>btn_submit</tabstop>
+ </tabstops>
  <resources/>
- <connections>
-  <connection>
-   <sender>btn_submit</sender>
-   <signal>clicked()</signal>
-   <receiver>spin_ticket</receiver>
-   <slot>clear()</slot>
-   <hints>
-    <hint type="sourcelabel">
-     <x>414</x>
-     <y>56</y>
-    </hint>
-    <hint type="destinationlabel">
-     <x>262</x>
-     <y>193</y>
-    </hint>
-   </hints>
-  </connection>
- </connections>
+ <connections/>
 </ui>

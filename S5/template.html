@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Movie Ticket</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Arial', sans-serif;
+        }
+        
+        body {
+            background-color: #f0f2f5;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            padding: 20px;
+        }
+        
+        .ticket {
+            width: 100%;
+            max-width: 400px;
+            background: white;
+            border-radius: 8px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+        }
+        
+        .ticket-header {
+            background: linear-gradient(to right, #3498db, #2c3e50);
+            color: white;
+            padding: 20px;
+            text-align: center;
+        }
+        
+        .ticket-header h1 {
+            font-size: 24px;
+            margin-bottom: 5px;
+            letter-spacing: 1px;
+        }
+        
+        .ticket-header p {
+            font-size: 14px;
+            opacity: 0.9;
+        }
+        
+        .ticket-body {
+            padding: 25px;
+        }
+        
+        .movie-title {
+            font-size: 22px;
+            font-weight: bold;
+            color: #2c3e50;
+            margin-bottom: 20px;
+            text-align: center;
+            padding-bottom: 15px;
+            border-bottom: 2px dashed #e0e0e0;
+        }
+        
+        .ticket-info {
+            margin-bottom: 25px;
+        }
+        
+        .info-row {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 15px;
+            padding-bottom: 10px;
+            border-bottom: 1px dashed #e0e0e0;
+        }
+        
+        .info-label {
+            font-weight: 600;
+            color: #555;
+        }
+        
+        .info-value {
+            font-weight: 500;
+            color: #333;
+        }
+        
+        .barcode {
+            text-align: center;
+            margin: 25px 0;
+            padding: 15px;
+            background: #f8f9fa;
+            border-radius: 6px;
+        }
+        
+        .barcode-placeholder {
+            font-family: 'Courier New', monospace;
+            font-size: 24px;
+            letter-spacing: 3px;
+            font-weight: bold;
+        }
+        
+        .ticket-footer {
+            background: #f8f9fa;
+            padding: 15px 20px;
+            text-align: center;
+            font-size: 12px;
+            color: #777;
+            border-top: 1px dashed #ddd;
+        }
+        
+        @media print {
+            body {
+                background: white;
+                padding: 0;
+            }
+            
+            .ticket {
+                box-shadow: none;
+                max-width: 100%;
+                margin: 0;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="ticket">
+        <div class="ticket-header">
+            <h1>CINEMA TICKET</h1>
+            <p>Admit One</p>
+        </div>
+        
+        <div class="ticket-body">
+            <div class="movie-title">MOVIE_NAME</div>
+            
+            <div class="ticket-info">
+                <div class="info-row">
+                    <span class="info-label">Customer Name:</span>
+                    <span class="info-value">CUSTOMER_NAME</span>
+                </div>
+                
+                <div class="info-row">
+                    <span class="info-label">Movie:</span>
+                    <span class="info-value">MOVIE_NAME</span>
+                </div>
+                
+                <div class="info-row">
+                    <span class="info-label">Number of Tickets:</span>
+                    <span class="info-value">NOT</span>
+                </div>
+                
+                <div class="info-row">
+                    <span class="info-label">Date of Sale:</span>
+                    <span class="info-value">DATE</span>
+                </div>
+            </div>
+            
+            <div class="barcode">
+                <div class="barcode-placeholder">A B C 1 2 3 4 5 6</div>
+            </div>
+        </div>
+        
+        <div class="ticket-footer">
+            <p>Please arrive 15 minutes before the showtime</p>
+            <p>Present this ticket at the entrance</p>
+        </div>
+    </div>
+</body>
+</html>
