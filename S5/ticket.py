@@ -14,7 +14,9 @@ class MainWindow(QtWidgets.QMainWindow):
         self.btn_clear.clicked.connect(self.clearMethod)
         self.btn_print.clicked.connect(self.printMethod)
         self.btn_exit.clicked.connect(self.close)
-
+        
+        self.actionSubmit.triggered.connect(self.submitMethod)
+        
     def submitMethod(self):
         #        self.spin.valueChanged.connect(self.show_result)
         fname=self.in_fname.text()
@@ -37,7 +39,7 @@ class MainWindow(QtWidgets.QMainWindow):
         doc=QTextDocument()
         doc.setHtml(html)
         printer=QPrinter()
-        printer.setPrinterName()
+        printer.setPrinterName("Print to PDF @ Alireza’s MBA")
         doc.print_(printer)        
 
 
