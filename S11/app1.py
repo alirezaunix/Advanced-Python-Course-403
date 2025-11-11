@@ -4,17 +4,19 @@ from nicegui import ui
 
 @ui.page('/other_page')
 def other_page():
+    data=[]
+    for line in open("/Users/alireza/Desktop/Advanced Python Course 403/S11/data.csv"):
+        data.append(dict(zip(["Firstname","Lastname","Age"],line.split(","))))
+    
+    
+    
     with ui.row().style("justify-content: center; align-items:center").classes("w-screen"):
         with ui.card().classes("w-1/2"):
-            ui.table(rows=[
-                {'make': 'Toyota', 'model': 'Celica', 'price': 35000},
-                {'make': 'Ford', 'model': 'Mondeo', 'price': 32000},
-                {'make': 'Porsche', 'model': 'Boxster', 'price': 72000},
-            ]).classes("w-full")
+            ui.table(rows=data).classes("w-full")
 
             with ui.column().classes("gap-5").classes("w-full"):
                 with ui.row().classes("w-full"):
-                    ui.button(text="Back",color='blue',on_click=other_page).style("flex:1")
+                    ui.button(text="Back",color='blue',on_click=lambda: ui.navigate.to("/")).style("flex:1")
 
 
 @ui.page('/')
@@ -61,6 +63,6 @@ def main():
                     ui.button(text="OK   ",color="green",on_click=f1).style("flex:2")
                     ui.button(text="Clear",color="red",on_click=f2).style("flex:2")
                 with ui.row().classes("w-full"):
-                    ui.link('Show result', other_page)
+                    ui.button(text="Show Data",color="blue",on_click=lambda: ui.navigate.to("/other_page")).style("flex:1")
                     
 ui.run()
