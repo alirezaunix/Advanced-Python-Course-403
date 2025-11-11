@@ -3,7 +3,7 @@ import flet as ft
 
 def main(page: ft.Page):
     page.theme_mode=ft.ThemeMode.LIGHT
-    page.bgcolor="#063768"
+    page.bgcolor="#094D90"
     page.window.width=300
     page.window.height=400
     page.vertical_alignment=ft.MainAxisAlignment.CENTER
@@ -41,4 +41,4 @@ def main(page: ft.Page):
 
 
 if __name__=="__main__":
-    ft.app(main)#view=ft.AppView.WEB_BROWSER
+    ft.app(main )#, view=ft.AppView.WEB_BROWSER)
