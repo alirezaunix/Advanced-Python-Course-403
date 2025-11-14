@@ -1,5 +1,5 @@
 from nicegui import ui
-
+import sqlite3
 
 
 @ui.page('/other_page')
@@ -40,8 +40,14 @@ def main():
             ui.notify("Password in Not Match")
         elif len(pass1)<8:
             ui.notify("Password Length must be over 8")
-        with open("/Users/alireza/Desktop/Advanced Python Course 403/S11/data.csv","ta") as f1:
-            f1.write(f"{fname},{lname},{age},{pass1}\n")
+        #with open("/Users/alireza/Desktop/Advanced Python Course 403/S11/data.csv","ta") as f1:
+        #    f1.write(f"{fname},{lname},{age},{pass1}\n")
+        conn=sqlite3.connect("/Users/alireza/Desktop/Advanced Python Course 403/S11/db.sqlite")
+        cu=conn.cursor()
+        cu.execute("CREATE TABLE IF NOT EXISTS person(id INTEGER PRIMARY KEY,fname TEXT,lname TEXT,age INTEGER,pass TEXT)")
+        cu.execute('INSERT INTO person(fname,lname,age,pass) VALUES(?,?,?,?)',[fname,lname,age,pass1])
+        conn.commit()
+        conn.close()
         f2()
     
     def f2():
